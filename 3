@@ -1,0 +1,14 @@
+uses Graphabc;
+var y,x,xs,ys,count,i:integer;
+const s:integer=10;
+begin
+  SetWindowSize(750,750);
+  read(x,y,count);
+  xs:=750;ys:=0;
+  for i:=1 to count do 
+    begin
+      SetBrushColor(rgb(random(255),random(255),random(255)));
+      rectangle(xs,ys+y,xs-x,ys);
+      ys+=(y div 4);xs-=(x div 4);
+    end;
+end.
