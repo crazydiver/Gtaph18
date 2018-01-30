@@ -1,0 +1,31 @@
+uses graphabc;
+var
+  kat,rad,step,count,i:integer;
+  p:array of point;
+begin
+  setwindowsize(750,750);
+  SetLength(p,3);
+  read(kat,rad,step,count);
+  setpencolor(clgreen);
+  p[0].X:=10+rad;      p[0].Y:=375-kat;
+  p[1].x:=10+rad;      p[1].y:=375;
+  p[2].x:=10+rad+kat;  p[2].y:=375;
+  drawPolygon(p);
+  setpencolor(clred);
+      drawcircle(p[0].X,p[0].Y,rad);
+      drawcircle(p[1].X,p[1].Y,rad);
+      drawcircle(p[2].X,p[2].Y,rad);
+  for i:=1 to count do
+    begin
+      p[0].X+=step+kat;
+      p[1].X+=step+kat;
+      p[2].X+=step+kat; 
+      setpencolor(clgreen);
+      drawpolygon(p);
+      setpencolor(clred);
+      drawcircle(p[0].X,p[0].Y,rad);
+      drawcircle(p[1].X,p[1].Y,rad);
+      drawcircle(p[2].X,p[2].Y,rad);
+      
+    end;
+end.
