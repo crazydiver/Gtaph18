@@ -1,0 +1,11 @@
+uses Graphabc;
+var rad,st,count,i:integer;
+begin
+  SetWindowSize(750,750);
+  read(rad,st,count);
+  for i:=1 to count do
+    begin
+      DrawCircle(rad+st,375,rad+st);
+      rad+=st;
+    end;
+end.
